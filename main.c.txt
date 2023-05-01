@@ -1,0 +1,37 @@
+#include <kipr/wombat.h>
+
+int main()
+{
+int sOpen =1210;
+int sClose = 211;
+int sUp = 182;
+int sDown = 1282;
+    printf("chimp\n");
+ enable_servos();
+  set_servo_position(0, sOpen);
+  set_servo_position(3, sUp);
+  msleep(1000);
+ disable_servos();
+
+    motor(1,0);
+    motor(3,80);
+    msleep(1900);
+    motor(1,110);
+    motor(3,100);
+    msleep(4300);
+    ao();
+        enable_servos();
+    set_servo_position(3,sDown);
+    ao();
+    motor(1,0);
+    motor(3, 90);
+    msleep(1100);
+    ao();
+  set_servo_position(0, sClose);
+    msleep(400);
+    ao();
+    motor(1, -40);
+    motor(3, -40);
+    msleep(1750);
+    return 0;
+}
